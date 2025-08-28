@@ -218,21 +218,6 @@ python tests/paper_eval.py --n 50 --rps "1,3,5" --dur 20
 
 The eval script exercises: happy path → DP fetch/verify → known-sources check → RBAC denial → audit window coverage; collects latency/err rates for tables.
 
-## 🧩 Frontend (optional console)
-
-A glossy, dark React console (Vite + TS + Tailwind + shadcn/ui + TanStack Query + Framer Motion + Recharts) can sit at `/ui`.
-
-See `frontend/README.md` for setup, or mount the built SPA:
-
-```python
-from fastapi.staticfiles import StaticFiles
-app.mount("/ui", StaticFiles(directory="frontend/dist", html=True), name="ui")
-```
-
-**Pages**: Dashboard, Query Lab, Audit Explorer, Proof Verifier, Egress Admin, Settings.
-
-**Design**: glassmorphism, gradient borders, spotlight cards, dock nav (21st.dev components wrapped under `src/components/ui`).
-
 ## 🔐 Privacy & Security Model
 
   - **PHI Minimization**: rule-based scrubbing with homoglyph defense (pluggable NER compatible).
@@ -303,6 +288,3 @@ You can export a results bundle (JSON) for submission artifacts:
 ## 📜 License
 
 MIT © 2025 PrivMCP contributors
-
-```
-```
