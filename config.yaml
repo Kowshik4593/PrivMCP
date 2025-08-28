@@ -1,0 +1,25 @@
+# Configuration for the PrivMCP Application
+
+# RAG Service Configuration
+rag:
+  # Model name for the ClinicalBERT model from Hugging Face
+  model_name: "emilyalsentzer/Bio_ClinicalBERT"
+  # Email address to use for PubMed API requests
+  pubmed_email: "r42295532@gmail.com"
+
+# ZKP Service Configuration
+zkp:
+  # Path to the Circom circuit for access control
+  circuit_path: "circom/can_access.circom"
+  # Directory to store the compiled circuit and proofs
+  build_dir: "build"
+
+# Proxy Server Configuration
+server:
+  host: "0.0.0.0"
+  port: 8080
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"

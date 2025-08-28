@@ -1,0 +1,4 @@
+Patient Name: John Doe
+DOB: 05/12/1980
+MRN: 1029384756
+Admitted to ICU on 10/04/2022. Complaining of chest pain and shortness of breath.

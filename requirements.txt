@@ -1,0 +1,34 @@
+# Core libraries
+fastapi
+uvicorn
+pydantic
+
+# Clinical NLP - Install in specific order to avoid build issues
+spacy>=3.4.0,<3.7.0
+medspacy>=1.0.0
+scispacy>=0.5.0
+# Note: Install this separately with: python -m pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_md-0.5.1.tar.gz
+transformers
+torch
+pillow
+soundfile
+whisper
+# Differential privacy
+opendp
+numpy
+pandas
+
+# ZKP integration
+pycryptodome
+requests
+
+# Logging / audits
+grpcio
+immudb-py
+
+# Evaluation and testing
+pytest
+locust
+rouge-score
+scikit-learn
+fhirclient

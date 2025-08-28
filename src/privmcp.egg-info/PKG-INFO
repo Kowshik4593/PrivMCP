@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: privmcp
+Version: 0.1.0
+Summary: PrivMCP: Privacy-Preserving, Explainable, Multimodal Clinical Prompt Server
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.111
+Requires-Dist: uvicorn[standard]>=0.30
+Requires-Dist: pydantic>=2.6
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: requests>=2.31
+Requires-Dist: transformers>=4.41
+Requires-Dist: torch>=2.2; platform_system != "Windows" or platform_machine != "ARM64"
+Requires-Dist: medspacy>=0.5.0
+Requires-Dist: pydantic-settings>=2.3.0
+Requires-Dist: pydantic>=2.11
+
+# PrivMCP: Multimodal Clinical Pipeline with Privacy, RAG, Audit, and Explainability
+
+## System Overview
+PrivMCP is an end-to-end clinical data pipeline that combines:
+- **Multimodal input**: Accepts text, images (e.g., x-rays), and audio (e.g., dictations).
+- **Privacy**: PHI redaction, differential privacy for numeric data, and zero-knowledge proof (ZKP) access control.
+- **Retrieval-Augmented Generation (RAG)**: Injects live PubMed citations into LLM responses for evidence-backed answers.
+- **Auditability**: Every query and response is logged with a reasoning trace for compliance and review.
+- **Explainability**: Each output includes a chain-of-thought reasoning trace, model details, and evidence links.
+
+## Key Features
+- **LLM Output**: Uses Groq API for real, high-quality LLM completions.
+- **Evidence Injection**: Fetches and cites PubMed articles relevant to the query.
+- **Clinical Captioning**: Images are captioned with BLIP2 using a clinical prompt; audio is transcribed with Whisper.
+- **Audit Log**: All queries, responses, and reasoning traces are appended to a downloadable audit log.
+- **Reasoning Trace**: JSON output includes prompt, PHI, DP, ZKP, citations, model used, and explainability notes.
+
+## Comparison to Prior Work
+Unlike prior systems, PrivMCP:
+- Supports real multimodal input (image/audio/text) in a single pipeline.
+- Provides evidence-backed LLM responses with live PubMed RAG.
+- Integrates privacy (DP, ZKP, PHI redaction) and audit logging by default.
+- Outputs a full reasoning trace for every answer, supporting explainability and compliance.
+
+See `docs/novelty.md` for more details on novelty and publication readiness.
